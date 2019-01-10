@@ -14,25 +14,13 @@ class GildedRose
     @quality = quality
   end
 
-  def normal_tick
-    @item = Normal.new(days_remaining, quality)
-    item.tick
-  end
+  def normal_tick; end
 
-  def brie_tick
-    @item = Brie.new(days_remaining, quality)
-    item.tick
-  end
+  def brie_tick; end
 
-  def sulfuras_tick
-    @item = Sulfuras.new(days_remaining, quality)
-    item.tick
-  end
+  def sulfuras_tick; end
 
-  def backstage_tick
-    @item = Backstage.new(days_remaining, quality)
-    item.tick
-  end
+  def backstage_tick; end
 
   def quality
     return item.quality if item
@@ -49,13 +37,17 @@ class GildedRose
   def tick
     case name
     when "Normal Item"
-      normal_tick
+      @item = Normal.new(days_remaining, quality)
+      item.tick
     when "Aged Brie"
-      brie_tick
+      @item = Brie.new(days_remaining, quality)
+      item.tick
     when "Sulfuras, Hand of Ragnaros"
-      sulfuras_tick
+      @item = Sulfuras.new(days_remaining, quality)
+      item.tick
     when "Backstage passes to a TAFKAL80ETC concert"
-      backstage_tick
+      @item = Backstage.new(days_remaining, quality)
+      item.tick
     end
   end
 end
