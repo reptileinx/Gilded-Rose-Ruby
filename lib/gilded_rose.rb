@@ -42,45 +42,13 @@ class GildedRose
   def tick
     case name
     when "Normal Item"
-      return normal_tick
+      normal_tick
     when "Aged Brie"
-      return brie_tick
+      brie_tick
     when "Sulfuras, Hand of Ragnaros"
-      return sulfuras_tick
+      sulfuras_tick
     when "Backstage passes to a TAFKAL80ETC concert"
-      return backstage_tick
-    end
-
-    if (@name != "Aged Brie") && (@name != "Backstage passes to a TAFKAL80ETC concert")
-      if @quality > 0
-        @quality -= 1 if @name != "Sulfuras, Hand of Ragnaros"
-      end
-    else
-      if @quality < 50
-        @quality += 1
-        if @name == "Backstage passes to a TAFKAL80ETC concert"
-          if @days_remaining < 11
-            @quality += 1 if @quality < 50
-          end
-          if @days_remaining < 6
-            @quality += 1 if @quality < 50
-          end
-        end
-      end
-    end
-    @days_remaining -= 1 if @name != "Sulfuras, Hand of Ragnaros"
-    if @days_remaining < 0
-      if @name != "Aged Brie"
-        if @name != "Backstage passes to a TAFKAL80ETC concert"
-          if @quality > 0
-            @quality -= 1 if @name != "Sulfuras, Hand of Ragnaros"
-          end
-        else
-          @quality -= @quality
-        end
-      else
-        @quality += 1 if @quality < 50
-      end
+      backstage_tick
     end
   end
 end
