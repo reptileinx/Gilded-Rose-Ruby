@@ -55,6 +55,18 @@ flog lib/gilded_rose.rb
      8.4: GildedRose#normal_tick           lib/gilded_rose.rb:12-18
 ```
 
+f1ec97bf5aa19bf0b2415ddaed15819c0fdf418a
+```bash
+flog lib
+    62.7: flog total
+     5.2: flog/method average
+
+    13.5: GildedRose#backstage_tick        lib/gilded_rose.rb:30-37
+     9.8: GildedRose#brie_tick             lib/gilded_rose.rb:19-26
+     8.6: GildedRose#tick                  lib/gilded_rose.rb:52-61
+     8.4: Normal#tick                      lib/normal.rb:11-17
+```
+
 ## Problems
 - hard to think about
 - different levels of abstractions

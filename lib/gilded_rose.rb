@@ -62,6 +62,3 @@ class GildedRose
     end
   end
 end
-
-class Normal
-end
