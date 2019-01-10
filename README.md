@@ -34,6 +34,8 @@ flog lib/gilded_rose.rb
     47.9: GildedRose#tick                  lib/gilded_rose.rb:19-50
 ```
 
-## Problems 
+## Problems
 - hard to think about
 - different levels of abstractions
+
+> Duplication is far cheaper than the wrong abstraction
