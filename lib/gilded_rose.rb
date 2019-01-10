@@ -10,13 +10,15 @@ class GildedRose
   end
 
   def normal_tick
-    @days_remaining -= 1
+    @days_remaining -= 1 # days has to always come before quality == 0
+
     return if @quality == 0
-    @quality -= 1
-    @quality -= 1 if @days_remaining <= 0
+
+    @quality -= 1 if @days_remaining > 0
+    @quality -= 2 if @days_remaining <= 0
   end
 
-  def(_tick)
+  def tick
     return normal_tick if name == "Normal Item"
 
     if (@name != "Aged Brie") && (@name != "Backstage passes to a TAFKAL80ETC concert")
