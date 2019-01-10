@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "normal"
+require_relative "brie"
 
 class GildedRose
   attr_reader :name, :days_remaining, :quality, :item
@@ -17,12 +18,8 @@ class GildedRose
   end
 
   def brie_tick
-    @days_remaining -= 1
-
-    return if @quality >= 50
-
-    @quality += 1
-    @quality += 1 if @days_remaining <= 0 && @quality < 50
+    @item = Brie.new(days_remaining, quality)
+    item.tick
   end
 
   def sulfuras_tick; end
