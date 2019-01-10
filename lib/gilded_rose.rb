@@ -2,6 +2,7 @@
 
 require_relative "normal"
 require_relative "brie"
+require_relative "backstage"
 
 class GildedRose
   attr_reader :name, :days_remaining, :quality, :item
@@ -25,13 +26,8 @@ class GildedRose
   def sulfuras_tick; end
 
   def backstage_tick
-    @days_remaining -= 1
-    return @quality = 0 if @days_remaining < 0
-    return if @quality >= 50
-
-    @quality += 1
-    @quality += 1 if @days_remaining < 10
-    @quality += 1 if @days_remaining < 5
+    @item = Backstage.new(days_remaining, quality)
+    item.tick
   end
 
   def quality
