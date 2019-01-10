@@ -22,3 +22,18 @@ Begin refactoring the existing `lib/gilded_rose.rb` class.
 Here are the [requirements](https://github.com/jimweirich/gilded_rose_kata#original-description-of-the-gilded-rose)
 as given in the original version of the kata. It may help you to understand the problem domain if you know
 that the [Gilded Rose](http://wowwiki.wikia.com/wiki/Gilded_Rose) is an inn from the World of Warcraft.
+
+
+## Flog check
+
+```
+flog lib/gilded_rose.rb
+    56.8: flog total
+    14.2: flog/method average
+
+    47.9: GildedRose#tick                  lib/gilded_rose.rb:19-50
+```
+
+## Problems 
+- hard to think about
+- different levels of abstractions
