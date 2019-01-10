@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
+require_relative "item"
 require_relative "normal"
 require_relative "brie"
 require_relative "backstage"
-require_relative "sulfuras"
 
 module GildedRose
   def self.for(name:, days_remaining:, quality:)
@@ -17,7 +17,7 @@ module GildedRose
     when "Aged Brie"
       Brie
     when "Sulfuras, Hand of Ragnaros"
-      Sulfuras
+      Item
     when "Backstage passes to a TAFKAL80ETC concert"
       Backstage
     end
