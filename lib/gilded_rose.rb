@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require_relative "normal"
+
 class GildedRose
-  attr_reader :name, :days_remaining, :quality
+  attr_reader :name, :days_remaining, :quality, :item
 
   def initialize(name:, days_remaining:, quality:)
     @name = name
@@ -10,14 +12,8 @@ class GildedRose
   end
 
   def normal_tick
-    item = Normal.new
-
-    @days_remaining -= 1 # days has to always come before quality == 0
-
-    return if @quality == 0
-
-    @quality -= 1 if @days_remaining > 0
-    @quality -= 2 if @days_remaining <= 0
+    @item = Normal.new(days_remaining, quality)
+    item.tick
   end
 
   def brie_tick
@@ -39,6 +35,18 @@ class GildedRose
     @quality += 1
     @quality += 1 if @days_remaining < 10
     @quality += 1 if @days_remaining < 5
+  end
+
+  def quality
+    return item.quality if item
+
+    @quality
+  end
+
+  def days_remaining
+    return item.days_remaining if item
+
+    @days_remaining
   end
 
   def tick
