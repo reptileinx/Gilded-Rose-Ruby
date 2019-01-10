@@ -10,7 +10,7 @@ The objective of this kata is to practice refactoring. This kata motivates the n
 * The tests of the current implementation pass, but there are a number of pending tests.
 * You are asked to implement the code to get the pending tests to pass.
 * This isn't easy, because the implementation is so messy.
-* Consider using the passing tests to refactor the code to make it more habitable before implementing new functionality.
+* Consider using the passing tests to refactor the code to make it more habitable before implementing for functionality.
 Also known as a [preparatory refactoring](http://martinfowler.com/articles/workflowsOfRefactoring/#preparatory).
 
 ## Where to Start

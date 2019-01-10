@@ -5,26 +5,12 @@ require_relative "brie"
 require_relative "backstage"
 require_relative "sulfuras"
 
-class GildedRose
-  attr_reader :item
-
-  def initialize(name:, days_remaining:, quality:)
-    @item = klass_for(name).new(days_remaining, quality)
+module GildedRose
+  def self.for(name:, days_remaining:, quality:)
+    klass_for(name).new(days_remaining, quality)
   end
 
-  def tick
-    item.tick
-   end
-
-  def quality
-    item.quality
-  end
-
-  def days_remaining
-    item.days_remaining
-  end
-
-  def klass_for(name)
+  def self.klass_for(name)
     case name
     when "Normal Item"
       Normal
