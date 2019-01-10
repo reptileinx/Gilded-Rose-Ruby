@@ -67,6 +67,17 @@ flog lib
      8.4: Normal#tick                      lib/normal.rb:11-17
 ```
 
+ac4ebd492afeb75a8a7ee19fb8f4e5f084913d2d
+```bash
+flog lib
+    88.7: flog total
+     5.2: flog/method average
+
+    30.5: GildedRose#tick                  lib/gilded_rose.rb:37-50
+    12.3: Backstage#tick                   lib/backstage.rb:11-18
+     9.0: Brie#tick                        lib/brie.rb:10-17
+     8.4: Normal#tick                      lib/normal.rb:11-17
+```
 ## Problems
 - hard to think about
 - different levels of abstractions

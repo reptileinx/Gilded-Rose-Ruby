@@ -14,14 +14,6 @@ class GildedRose
     @quality = quality
   end
 
-  def normal_tick; end
-
-  def brie_tick; end
-
-  def sulfuras_tick; end
-
-  def backstage_tick; end
-
   def quality
     return item.quality if item
 
