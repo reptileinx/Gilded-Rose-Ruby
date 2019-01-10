@@ -1,12 +1,8 @@
 # frozen_string_literal: true
 
-class Brie
-  attr_reader :days_remaining, :quality
-  def initialize(days_remaining, quality)
-    @days_remaining = days_remaining
-    @quality = quality
-  end
+require_relative "item"
 
+class Brie < Item
   def tick
     @days_remaining -= 1
 

@@ -1,13 +1,8 @@
 # frozen_string_literal: true
 
-class Backstage
-  attr_reader :days_remaining, :quality
+require_relative "item"
 
-  def initialize(days_remaining, quality)
-    @days_remaining = days_remaining
-    @quality = quality
-  end
-
+class Backstage < Item
   def tick
     @days_remaining -= 1
     return @quality = 0 if @days_remaining.negative?
