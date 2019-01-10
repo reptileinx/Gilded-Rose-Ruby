@@ -6,40 +6,34 @@ require_relative "backstage"
 require_relative "sulfuras"
 
 class GildedRose
-  attr_reader :name, :days_remaining, :quality, :item
+  attr_reader :item
 
   def initialize(name:, days_remaining:, quality:)
-    @name = name
-    @days_remaining = days_remaining
-    @quality = quality
-  end
-
-  def quality
-    return item.quality if item
-
-    @quality
-  end
-
-  def days_remaining
-    return item.days_remaining if item
-
-    @days_remaining
+    @item = klass_for(name).new(days_remaining, quality)
   end
 
   def tick
+    item.tick
+   end
+
+  def quality
+    item.quality
+  end
+
+  def days_remaining
+    item.days_remaining
+  end
+
+  def klass_for(name)
     case name
     when "Normal Item"
-      @item = Normal.new(days_remaining, quality)
-      item.tick
+      Normal
     when "Aged Brie"
-      @item = Brie.new(days_remaining, quality)
-      item.tick
+      Brie
     when "Sulfuras, Hand of Ragnaros"
-      @item = Sulfuras.new(days_remaining, quality)
-      item.tick
+      Sulfuras
     when "Backstage passes to a TAFKAL80ETC concert"
-      @item = Backstage.new(days_remaining, quality)
-      item.tick
+      Backstage
     end
   end
 end
