@@ -3,6 +3,7 @@
 require_relative "normal"
 require_relative "brie"
 require_relative "backstage"
+require_relative "sulfuras"
 
 class GildedRose
   attr_reader :name, :days_remaining, :quality, :item
@@ -23,7 +24,10 @@ class GildedRose
     item.tick
   end
 
-  def sulfuras_tick; end
+  def sulfuras_tick
+    @item = Sulfuras.new(days_remaining, quality)
+    item.tick
+  end
 
   def backstage_tick
     @item = Backstage.new(days_remaining, quality)
