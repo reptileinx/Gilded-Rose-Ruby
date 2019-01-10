@@ -10,6 +10,8 @@ class GildedRose
   end
 
   def normal_tick
+    item = Normal.new
+
     @days_remaining -= 1 # days has to always come before quality == 0
 
     return if @quality == 0
@@ -51,4 +53,7 @@ class GildedRose
       backstage_tick
     end
   end
+end
+
+class Normal
 end
