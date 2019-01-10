@@ -26,8 +26,8 @@ that the [Gilded Rose](http://wowwiki.wikia.com/wiki/Gilded_Rose) is an inn from
 
 ## Flog check
 
+0ab533b97461b7eacc9adc1ad373ad267e3582f7
 ```bash
-# initial commit
 flog lib/gilded_rose.rb
     56.8: flog total
     14.2: flog/method average
@@ -35,8 +35,8 @@ flog lib/gilded_rose.rb
     47.9: GildedRose#tick                  lib/gilded_rose.rb:19-50
 ```
 
+428cf95d772fe648ba801fdb663b641b23740589
 ```bash
-# 428cf95d772fe648ba801fdb663b641b23740589
 flog lib/gilded_rose.rb
    85.8: flog total
    14.3: flog/method average
@@ -44,8 +44,8 @@ flog lib/gilded_rose.rb
    52.2: GildedRose#tick                  lib/gilded_rose.rb:42-82
 ```
 
+78c49e9b61253fa8354890ca483570bd177dc74c
 ```bash
-# 78c49e9b61253fa8354890ca483570bd177dc74c
 flog lib/gilded_rose.rb
     41.6: flog total
      6.9: flog/method average
